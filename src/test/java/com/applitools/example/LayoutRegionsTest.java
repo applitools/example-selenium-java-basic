@@ -1,4 +1,5 @@
 package com.applitools.example;
+
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.EyesRunner;
 import com.applitools.eyes.RectangleSize;
@@ -17,9 +18,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.time.Duration;
 
-public class AcmeBankTests {
+public class LayoutRegionsTest {
 
     private final static BatchInfo BATCH = new BatchInfo("Applitools Quickstart");
 
@@ -37,11 +39,11 @@ public class AcmeBankTests {
             config.setApiKey(System.getenv("APPLITOOLS_API_KEY"));
             config.setBatch(BATCH);
             config.addBrowsers(
-                new DesktopBrowserInfo(800, 1024, BrowserType.CHROME),
-                new DesktopBrowserInfo(1600, 1200, BrowserType.FIREFOX),
-                new DesktopBrowserInfo(1024, 768, BrowserType.SAFARI),
-                new ChromeEmulationInfo(DeviceName.Pixel_2, ScreenOrientation.PORTRAIT),
-                new ChromeEmulationInfo(DeviceName.Nexus_10, ScreenOrientation.LANDSCAPE)
+                    new DesktopBrowserInfo(800, 1024, BrowserType.CHROME),
+                    new DesktopBrowserInfo(1600, 1200, BrowserType.FIREFOX),
+                    new DesktopBrowserInfo(1024, 768, BrowserType.SAFARI),
+                    new ChromeEmulationInfo(DeviceName.Pixel_2, ScreenOrientation.PORTRAIT),
+                    new ChromeEmulationInfo(DeviceName.Nexus_10, ScreenOrientation.LANDSCAPE)
             );
             eyes.setConfiguration(config);
             ChromeOptions options = new ChromeOptions().addArguments("--headless=new");
@@ -62,11 +64,10 @@ public class AcmeBankTests {
             // Full Page - Visual AI Assertion
             eyes.check(
                 Target.window().fully().withName("Main page")
-                // Uncomment to apply Layout regions and have test pass
-                /* .layout(
-                    By.cssSelector(".dashboardOverview_accountBalances__3TUPB"),
-                    By.cssSelector(".dashboardTable_dbTable___R5Du")
-                ) */
+                .layout(
+                        By.cssSelector(".dashboardOverview_accountBalances__3TUPB"),
+                        By.cssSelector(".dashboardTable_dbTable___R5Du")
+                )
             );
 
             // End Applitools Visual AI Test
