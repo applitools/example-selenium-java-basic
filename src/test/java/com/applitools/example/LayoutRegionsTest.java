@@ -23,7 +23,7 @@ import java.time.Duration;
 
 public class LayoutRegionsTest {
 
-    private final static BatchInfo BATCH = new BatchInfo("Applitools Quickstart");
+    private final static BatchInfo BATCH = new BatchInfo("Selenium Java Basic Quickstart");
 
     public static void main(String [] args) {
 
