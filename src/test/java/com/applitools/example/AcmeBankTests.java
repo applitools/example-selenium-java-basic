@@ -49,7 +49,7 @@ public class AcmeBankTests {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
             // Start Applitools Visual AI Test
-            eyes.open(driver,"ACME Bank", "Selenium Java Basic: Log into a bank account", new RectangleSize(1200, 600));
+            eyes.open(driver,"ACME Bank", "Selenium Java Basic: Quickstart", new RectangleSize(1200, 600));
             driver.get("https://sandbox.applitools.com/bank?layoutAlgo=true");
 
             // Full Page - Visual AI Assertion
