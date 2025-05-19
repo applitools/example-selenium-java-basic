@@ -70,7 +70,7 @@ public class LayoutRegionsTest {
                 )
             );
 
-            // End Applitools Visual AI Test
+            // End Applitools Eyes Visual AI Test
             eyes.closeAsync();
         }
         catch (Exception e) {
