@@ -57,8 +57,8 @@ public class LayoutRegionsTest {
             // Full Page - Visual AI Assertion
             eyes.check(Target.window().fully().withName("Login page"));
 
-            driver.findElement(By.id("username")).sendKeys("user");
-            driver.findElement(By.id("password")).sendKeys("password");
+            driver.findElement(By.id("username")).sendKeys("Chris");
+            driver.findElement(By.id("password")).sendKeys("CorrectHorseBatteryStaple");
             driver.findElement(By.id("log-in")).click();
 
             // Full Page - Visual AI Assertion
