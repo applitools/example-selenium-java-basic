@@ -47,7 +47,7 @@ public class AcmeBankTests {
             eyes.setConfiguration(config);
             ChromeOptions options = new ChromeOptions().addArguments("--headless=new");
             driver = new ChromeDriver(options);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             // Start Applitools Visual AI Test
             eyes.open(driver,"ACME Bank", "Selenium Java Basic: Quickstart", new RectangleSize(1200, 600));
