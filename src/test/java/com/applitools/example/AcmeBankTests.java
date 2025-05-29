@@ -95,6 +95,5 @@ public class AcmeBankTests {
         }
 
             System.exit(0); // Will not be reached if mismatch occurred
-        }
     }
 }
