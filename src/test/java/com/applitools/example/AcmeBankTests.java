@@ -2,6 +2,7 @@ package com.applitools.example;
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.EyesRunner;
 import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.TestResultContainer;
 import com.applitools.eyes.TestResultsSummary;
 import com.applitools.eyes.selenium.BrowserType;
 import com.applitools.eyes.selenium.Configuration;
@@ -50,7 +51,7 @@ public class AcmeBankTests {
 
             // Start Applitools Visual AI Test
             eyes.open(driver,"ACME Bank", "Selenium Java Basic: Quickstart", new RectangleSize(1200, 600));
-            driver.get("https://sandbox.applitools.com/bank?layoutAlgo=true");
+            driver.get("https://sandbox.applitools.com/bank");
 
             // Full Page - Visual AI Assertion
             eyes.check(Target.window().fully().withName("Login page"));
@@ -62,6 +63,7 @@ public class AcmeBankTests {
             // Full Page - Visual AI Assertion
             eyes.check(
                 Target.window().fully().withName("Main page")
+
                 // Uncomment to apply Layout regions and have test pass
                 /* .layout(
                     By.cssSelector(".dashboardOverview_accountBalances__3TUPB"),
@@ -79,11 +81,20 @@ public class AcmeBankTests {
         } finally {
             if (driver != null)
                 driver.quit();
+
             if (runner != null) {
                 TestResultsSummary allTestResults = runner.getAllTestResults();
-                System.out.println(allTestResults);
+                for (TestResultContainer container : allTestResults.getAllResults()) {
+                    if (container.getTestResults() != null && !container.getTestResults().isPassed()) {
+                        System.exit(1);
+                    }
+                }
             }
-            System.exit(0);
+
+            System.exit(0); // All tests passed
+        }
+
+            System.exit(0); // Will not be reached if mismatch occurred
         }
     }
 }
