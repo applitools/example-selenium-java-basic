@@ -17,19 +17,39 @@
         <dependency>
             <groupId>com.applitools</groupId>
             <artifactId>eyes-selenium-java5</artifactId>
-            <version>5.80.0</version>
+            <version>5.81.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.10.0</version>
+            <version>4.35.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                <execution>
+                    <id>enforce-maven</id>
+                    <goals>
+                    <goal>enforce</goal>
+                    </goals>
+                    <configuration>
+                    <rules>
+                        <requireMavenVersion>
+                        <version>3.6.1</version>
+                        </requireMavenVersion>
+                    </rules>    
+                    </configuration>
+                </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
