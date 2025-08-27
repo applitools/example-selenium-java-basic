@@ -1,6 +1,6 @@
 # Applitools Example: Basic Selenium WebDriver in Java
 
-This is the example project for the [Selenium Java Basic tutorial](https://applitools.com/tutorials/quickstart/web/selenium/java/basic).
+This is the example project for the [Selenium Java Basic tutorial](https://applitools.com/tutorials).
 It shows how to start automating visual tests
 with [Applitools Eyes](https://applitools.com/platform/eyes/)
 and [Selenium WebDriver](https://www.selenium.dev/) in Java.
@@ -25,14 +25,19 @@ To run this example project, you'll need:
 3. A good Java editor, such as [JetBrains IntelliJ IDEA](https://www.jetbrains.com/idea/).
 4. [Apache Maven](https://maven.apache.org/download.cgi) (typically bundled with IDEs).
 5. An up-to-date version of [Google Chrome](https://www.google.com/chrome/downloads/).
-6. A corresponding version of [ChromeDriver](https://chromedriver.chromium.org/downloads).
 
 The main test case is [`AcmeBankTests.java`](src/test/java/com/applitools/example/AcmeBankTests.java).
 By default, the project will run tests with Ultrafast Grid but not Execution Cloud.
 You can change these settings in the test class.
 
 To execute tests, set the `APPLITOOLS_API_KEY` environment variable
-to your [account's API key](https://applitools.com/tutorials/guides/getting-started/registering-an-account).
+to your [account's API key](https://applitools.com/tutorials/getting-started/registering-an-account).
+
+Install the dependencies
+```
+mvn install
+```
+
 You can launch the test from your IDE,
 or you can run it from the command line with Maven like this:
 
@@ -41,4 +46,4 @@ mvn exec:exec@run-the-tests -Dexec.classpathScope=test
 ```
 
 **For full instructions on running this project, take our
-[Selenium Java Basic tutorial](https://applitools.com/tutorials/quickstart/web/selenium/java/basic)!**
+[Selenium Java Basic tutorial](https://applitools.com/tutorials)!**
