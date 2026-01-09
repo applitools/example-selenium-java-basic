@@ -47,8 +47,6 @@ public class LayoutRegionsTest {
                     new ChromeEmulationInfo(DeviceName.Nexus_10, ScreenOrientation.LANDSCAPE)
             );
 
-            // The match level determines the way by which Eyes compares the checkpoint image with the baseline image.
-            // Read more about our available algorithms here: https://applitools.com/docs/eyes/concepts/best-practices/match-levels
             config.setMatchLevel(MatchLevel.STRICT);
 
             eyes.setConfiguration(config);
