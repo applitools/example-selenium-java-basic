@@ -2,6 +2,7 @@ package com.applitools.example;
 
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.EyesRunner;
+import com.applitools.eyes.MatchLevel;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.TestResultsSummary;
 import com.applitools.eyes.selenium.BrowserType;
@@ -45,6 +46,11 @@ public class LayoutRegionsTest {
                     new ChromeEmulationInfo(DeviceName.Pixel_2, ScreenOrientation.PORTRAIT),
                     new ChromeEmulationInfo(DeviceName.Nexus_10, ScreenOrientation.LANDSCAPE)
             );
+
+            // The match level determines the way by which Eyes compares the checkpoint image with the baseline image.
+            // Read more about our available algorithms here: https://applitools.com/docs/eyes/concepts/best-practices/match-levels
+            config.setMatchLevel(MatchLevel.STRICT);
+
             eyes.setConfiguration(config);
             ChromeOptions options = new ChromeOptions().addArguments("--headless=new");
             driver = new ChromeDriver(options);
